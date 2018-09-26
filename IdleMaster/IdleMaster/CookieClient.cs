@@ -117,7 +117,7 @@ namespace IdleMaster
             var response = await GetHttpAsync(Settings.Default.myProfileURL);
             var document = new HtmlDocument();
             document.LoadHtml(response);
-            return document.DocumentNode.SelectSingleNode("//a[@class=\"global_action_link\"]") == null;
+            return document.DocumentNode.SelectSingleNode("//a[(@class=\"global_action_link\") and not(@id)]") == null;
         }
 
         public CookieClient()

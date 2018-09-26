@@ -15,11 +15,11 @@ namespace IdleMaster
     private void btnView_Click(object sender, EventArgs e)
     {
       txtSessionID.PasswordChar = '\0';
-      txtSteamLogin.PasswordChar = '\0';
+      txtsteamMachineAuth.PasswordChar = '\0';
       txtsteamLoginSecure.PasswordChar = '\0';
 
       txtSessionID.Enabled = true;
-      txtSteamLogin.Enabled = true;
+      txtsteamMachineAuth.Enabled = true;
       txtsteamLoginSecure.Enabled = true;
 
       btnView.Visible = false;
@@ -45,12 +45,12 @@ namespace IdleMaster
 
       if (!string.IsNullOrWhiteSpace(Settings.Default.steamLogin))
       {
-        txtSteamLogin.Text = Settings.Default.steamLogin;
-        txtSteamLogin.Enabled = false;
+        txtsteamMachineAuth.Text = Settings.Default.steamLogin;
+        txtsteamMachineAuth.Enabled = false;
       }
       else
       {
-        txtSteamLogin.PasswordChar = '\0';
+        txtsteamMachineAuth.PasswordChar = '\0';
       }
 
       if (!string.IsNullOrWhiteSpace(Settings.Default.steamLoginSecure))
@@ -63,7 +63,7 @@ namespace IdleMaster
         txtsteamLoginSecure.PasswordChar = '\0';
       }
 
-      if (txtSessionID.Enabled && txtSteamLogin.Enabled && txtsteamLoginSecure.Enabled)
+      if (txtSessionID.Enabled && txtsteamMachineAuth.Enabled && txtsteamLoginSecure.Enabled)
       {
         btnView.Visible = false;
       }
@@ -91,7 +91,7 @@ namespace IdleMaster
       try
       {
         Settings.Default.sessionid = txtSessionID.Text.Trim();
-        Settings.Default.steamLogin = txtSteamLogin.Text.Trim();
+        Settings.Default.steamMachineAuth = txtsteamMachineAuth.Text.Trim();
         Settings.Default.myProfileURL = SteamProfile.GetSteamUrl();
         Settings.Default.steamLoginSecure = txtsteamLoginSecure.Text.Trim();
 
@@ -110,13 +110,13 @@ namespace IdleMaster
       // Invalid cookie data, reset the form
       btnUpdate.Text = localization.strings.update;
       txtSessionID.Text = "";
-      txtSteamLogin.Text = "";
+      txtsteamMachineAuth.Text = "";
       txtsteamLoginSecure.Text = "";
       txtSessionID.PasswordChar = '\0';
-      txtSteamLogin.PasswordChar = '\0';
+      txtsteamMachineAuth.PasswordChar = '\0';
       txtsteamLoginSecure.PasswordChar = '\0';
       txtSessionID.Enabled = true;
-      txtSteamLogin.Enabled = true;
+      txtsteamMachineAuth.Enabled = true;
       txtsteamLoginSecure.Enabled = true;
       txtSessionID.Focus();
       MessageBox.Show(localization.strings.validate_failed);
@@ -127,7 +127,7 @@ namespace IdleMaster
     {
       btnUpdate.Enabled = false;
       txtSessionID.Enabled = false;
-      txtSteamLogin.Enabled = false;
+      txtsteamMachineAuth.Enabled = false;
       txtsteamLoginSecure.Enabled = false;
       btnUpdate.Text = localization.strings.validating;
       await CheckAndSave();

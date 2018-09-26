@@ -37,7 +37,7 @@ namespace IdleMaster
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSessionID = new System.Windows.Forms.TextBox();
-            this.txtSteamLogin = new System.Windows.Forms.TextBox();
+            this.txtsteamMachineAuth = new System.Windows.Forms.TextBox();
             this.txtsteamLoginSecure = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
@@ -55,11 +55,11 @@ namespace IdleMaster
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(25, 33);
+            this.label2.Location = new System.Drawing.Point(3, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "steamLogin:";
+            this.label2.Text = "steamMachineAuth:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label3
@@ -80,14 +80,14 @@ namespace IdleMaster
             this.txtSessionID.TabIndex = 3;
             this.txtSessionID.TextChanged += new System.EventHandler(this.txtSessionID_TextChanged);
             // 
-            // txtSteamLogin
+            // txtsteamMachineAuth
             // 
-            this.txtSteamLogin.Location = new System.Drawing.Point(116, 30);
-            this.txtSteamLogin.Name = "txtSteamLogin";
-            this.txtSteamLogin.PasswordChar = '*';
-            this.txtSteamLogin.Size = new System.Drawing.Size(317, 21);
-            this.txtSteamLogin.TabIndex = 4;
-            this.txtSteamLogin.TextChanged += new System.EventHandler(this.txtSteamLogin_TextChanged);
+            this.txtsteamMachineAuth.Location = new System.Drawing.Point(116, 30);
+            this.txtsteamMachineAuth.Name = "txtsteamMachineAuth";
+            this.txtsteamMachineAuth.PasswordChar = '*';
+            this.txtsteamMachineAuth.Size = new System.Drawing.Size(317, 21);
+            this.txtsteamMachineAuth.TabIndex = 4;
+            this.txtsteamMachineAuth.TextChanged += new System.EventHandler(this.txtSteamLogin_TextChanged);
             // 
             // txtsteamLoginSecure
             // 
@@ -137,7 +137,7 @@ namespace IdleMaster
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.txtsteamLoginSecure);
-            this.Controls.Add(this.txtSteamLogin);
+            this.Controls.Add(this.txtsteamMachineAuth);
             this.Controls.Add(this.txtSessionID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -160,7 +160,7 @@ namespace IdleMaster
         private Label label2;
         private Label label3;
         private TextBox txtSessionID;
-        private TextBox txtSteamLogin;
+        private TextBox txtsteamMachineAuth;
         private TextBox txtsteamLoginSecure;
         private Button btnView;
         private Button btnUpdate;

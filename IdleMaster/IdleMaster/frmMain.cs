@@ -448,6 +448,8 @@ namespace IdleMaster
         public async Task LoadBadgesAsync()
         {
             // Settings.Default.myProfileURL = https://steamcommunity.com/id/USER
+            // Refresh myProfileURL
+            Settings.Default.myProfileURL= SteamProfile.GetSteamUrl();
             var profileLink = Settings.Default.myProfileURL + "/badges";
             var pages = new List<string>() { "?p=1" };
             var document = new HtmlDocument();
