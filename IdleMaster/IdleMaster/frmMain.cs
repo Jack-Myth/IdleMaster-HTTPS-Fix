@@ -1245,5 +1245,12 @@ namespace IdleMaster
         {
             Process.Start("https://steamcn.com/t367755-1-1");
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Program.Mode = 1;
+            StopAutoNext();
+            Close();
+        }
     }
 }

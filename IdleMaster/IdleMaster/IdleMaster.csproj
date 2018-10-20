@@ -356,6 +356,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\btnBack.png" />
     <Content Include="logo1.ico" />
     <None Include="Resources\JackMythSq_128x128.jpg" />
     <None Include="Resources\stcn.png" />
