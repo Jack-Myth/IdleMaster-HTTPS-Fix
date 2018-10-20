@@ -52,29 +52,24 @@ namespace IdleMaster
             }
         }
 
-        private void UpdateEnabledList()
+        private void UpdateEnabledList(int CurItem,CheckState NewValue)
         {
-            Settings.Default.EnabledAlwaysIdleList.Clear();
-            for (int i = 0; i < this.checkedListBox1.Items.Count; i++)
+            if (NewValue == CheckState.Checked)
             {
-                if (this.checkedListBox1.GetItemChecked(i))
-                {
-                    Settings.Default.EnabledAlwaysIdleList.Add(AppIDList[i].ToString());
-                }
+                if (Settings.Default.EnabledAlwaysIdleList.IndexOf(AppIDList[CurItem].ToString()) == -1)
+                    Settings.Default.EnabledAlwaysIdleList.Add(AppIDList[CurItem].ToString());
             }
+            else
+                Settings.Default.EnabledAlwaysIdleList.Remove(AppIDList[CurItem].ToString());
             Settings.Default.Save();
-        }
-
-        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            UpdateEnabledList();
         }
 
         private async void AlwaysIdleList_LoadAsync(object sender, EventArgs e)
         {
             //Settings.Default.AlwaysIdleList.Clear();
             //Settings.Default.Save();
-            var EnabledList = Settings.Default.EnabledAlwaysIdleList;
+            var EnabledList = new System.Collections.Specialized.StringCollection();
+            EnabledList = Settings.Default.EnabledAlwaysIdleList;
             for (int i = 0; i < Settings.Default.AlwaysIdleList.Count; i++)
             {
                 int AppID = int.Parse(Settings.Default.AlwaysIdleList[i]);
@@ -102,7 +97,7 @@ namespace IdleMaster
             Settings.Default.AlwaysIdleList.Remove(AppIDList[CurIndexOf].ToString());
             AppIDList.RemoveAt(CurIndexOf);
             this.checkedListBox1.Items.RemoveAt(CurIndexOf);
-            UpdateEnabledList();
+            Settings.Default.Save();
         }
 
         private void btmSelectAll_Click(object sender, EventArgs e)
@@ -111,7 +106,6 @@ namespace IdleMaster
             {
                 this.checkedListBox1.SetItemChecked(i, true);
             }
-            UpdateEnabledList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -120,7 +114,6 @@ namespace IdleMaster
             {
                 this.checkedListBox1.SetItemChecked(i, false);
             }
-            UpdateEnabledList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -130,6 +123,7 @@ namespace IdleMaster
                 //Stop Idle
                 foreach (Process p in ProcessList)
                     p.Kill();
+                ProcessList.Clear();
                 this.button2.Text = "▶开始";
                 this.checkedListBox1.Enabled = true;
                 Idling = false;
@@ -151,6 +145,7 @@ namespace IdleMaster
             e.Cancel = false;
             foreach (Process p in ProcessList)
                 p.Kill();
+            ProcessList.Clear();
         }
 
         private void AlwaysIdleList_Resize(object sender, EventArgs e)
@@ -165,6 +160,8 @@ namespace IdleMaster
         private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
         {
             this.Show();
+            this.WindowState = FormWindowState.Normal;
+            this.notifyIcon1.Visible = false;
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -189,6 +186,11 @@ namespace IdleMaster
             }
             return AppID.ToString();
             //https://store.steampowered.com/api/appdetails/?appids=
+        }
+
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            UpdateEnabledList(e.Index,e.NewValue);
         }
     }
 }
