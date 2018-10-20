@@ -104,6 +104,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlwaysIdleList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlwaysIdleList.Designer.cs">
+      <DependentUpon>AlwaysIdleList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AvgValues.cs" />
     <Compile Include="Badge.cs" />
     <Compile Include="CookieClient.cs">
@@ -178,6 +184,9 @@
     </Compile>
     <Compile Include="Statistics.cs" />
     <Compile Include="SteamProfile.cs" />
+    <EmbeddedResource Include="AlwaysIdleList.resx">
+      <DependentUpon>AlwaysIdleList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
       <SubType>Designer</SubType>

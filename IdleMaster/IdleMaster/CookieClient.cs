@@ -74,7 +74,7 @@ namespace IdleMaster
             return "steamMachineAuth";
         }
 
-        public static async Task<string> GetHttpAsync(string url, int count = 3)
+        public static async Task<string> GetHttpAsync(string url, int count = 3,bool IgnoreCookieState=false)
         {
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             while (true)
@@ -84,7 +84,7 @@ namespace IdleMaster
                 try
                 {
                     // If user is NOT authenticated (cookie got deleted in GetWebResponse()), return empty result
-                    if (String.IsNullOrEmpty(Settings.Default.sessionid))
+                    if (IgnoreCookieState==false&&String.IsNullOrEmpty(Settings.Default.sessionid))
                     {
                         return string.Empty;
                     }
