@@ -48,6 +48,7 @@ namespace IdleMaster
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.blacklistToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FreeIdleMode = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.autoNextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EnableImgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,6 @@ namespace IdleMaster
             this.tmrStatistics = new System.Windows.Forms.Timer(this.components);
             this.tmrAutoNext = new System.Windows.Forms.Timer(this.components);
             this.autonextlabel = new System.Windows.Forms.Label();
-            this.idleTimeMode = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTop.SuspendLayout();
             this.ssFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picReadingPage)).BeginInit();
@@ -227,7 +227,7 @@ namespace IdleMaster
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.blacklistToolStripMenuItem,
-            this.idleTimeMode,
+            this.FreeIdleMode,
             this.toolStripSeparator1,
             this.autoNextToolStripMenuItem,
             this.EnableImgToolStripMenuItem,
@@ -242,7 +242,7 @@ namespace IdleMaster
             // 
             this.settingsToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgSettings;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.settingsToolStripMenuItem.Text = "&Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -250,46 +250,53 @@ namespace IdleMaster
             // 
             this.blacklistToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgBlacklist;
             this.blacklistToolStripMenuItem.Name = "blacklistToolStripMenuItem";
-            this.blacklistToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.blacklistToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.blacklistToolStripMenuItem.Text = "&Blacklist";
             this.blacklistToolStripMenuItem.Click += new System.EventHandler(this.blacklistToolStripMenuItem_Click);
+            // 
+            // FreeIdleMode
+            // 
+            this.FreeIdleMode.Name = "FreeIdleMode";
+            this.FreeIdleMode.Size = new System.Drawing.Size(184, 26);
+            this.FreeIdleMode.Text = "自由运行模式";
+            this.FreeIdleMode.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // autoNextToolStripMenuItem
             // 
             this.autoNextToolStripMenuItem.Name = "autoNextToolStripMenuItem";
-            this.autoNextToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.autoNextToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.autoNextToolStripMenuItem.Text = "打开自动下一个";
             this.autoNextToolStripMenuItem.Click += new System.EventHandler(this.autoNextToolStripMenuItem_Click);
             // 
             // EnableImgToolStripMenuItem
             // 
             this.EnableImgToolStripMenuItem.Name = "EnableImgToolStripMenuItem";
-            this.EnableImgToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.EnableImgToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.EnableImgToolStripMenuItem.Text = "打开图片显示";
             this.EnableImgToolStripMenuItem.Click += new System.EventHandler(this.EnableImgToolStripMenuItem_Click);
             // 
             // ReloadToolStripMenuItem
             // 
             this.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem";
-            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.ReloadToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.ReloadToolStripMenuItem.Text = "重新加载";
             this.ReloadToolStripMenuItem.Click += new System.EventHandler(this.ReloadToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgExit;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -615,13 +622,6 @@ namespace IdleMaster
             this.autonextlabel.Visible = false;
             this.autonextlabel.Click += new System.EventHandler(this.autonextlabel_Click);
             // 
-            // idleTimeMode
-            // 
-            this.idleTimeMode.Name = "idleTimeMode";
-            this.idleTimeMode.Size = new System.Drawing.Size(184, 26);
-            this.idleTimeMode.Text = "挂时长模式";
-            this.idleTimeMode.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -737,7 +737,7 @@ namespace IdleMaster
         private Label autonextlabel;
         private ToolStripMenuItem EnableImgToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem idleTimeMode;
+        private ToolStripMenuItem FreeIdleMode;
     }
 }
 
