@@ -85,6 +85,9 @@ namespace IdleMaster
             //Settings.Default.Save();
             var EnabledList = new System.Collections.Specialized.StringCollection();
             EnabledList = Settings.Default.EnabledAlwaysIdleList;
+            Settings.Default.EnabledAlwaysIdleList.Remove("");
+            Settings.Default.AlwaysIdleList.Remove("");
+            Settings.Default.Save();
             for (int i = 0; i < Settings.Default.AlwaysIdleList.Count; i++)
             {
                 int AppID = int.Parse(Settings.Default.AlwaysIdleList[i]);
