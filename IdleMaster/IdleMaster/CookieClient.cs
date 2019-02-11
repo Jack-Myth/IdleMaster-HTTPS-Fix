@@ -64,6 +64,9 @@ namespace IdleMaster
             cookies.Add(new Cookie("steamLoginSecure", Settings.Default.steamLoginSecure) { Domain = target.Host });
             cookies.Add(new Cookie("steamRememberLogin", Settings.Default.steamRememberLogin) { Domain = target.Host });
             cookies.Add(new Cookie(GetSteamMachineAuthCookieName(), Settings.Default.steamMachineAuth) { Domain = target.Host });
+            //Check Steam parental
+            if (Settings.Default.steamparental != "")
+                cookies.Add(new Cookie("steamparental", Settings.Default.steamparental) { Domain = target.Host });
             return cookies;
         }
 

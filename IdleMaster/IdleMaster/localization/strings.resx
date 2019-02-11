@@ -341,4 +341,13 @@ your Steam account.</value>
   <data name="idle_onethenmany" xml:space="preserve">
     <value>Idle games with more than 2 hours individually, then simultaneously</value>
   </data>
+  <data name="notice" xml:space="preserve">
+    <value>Notice</value>
+  </data>
+  <data name="notice_familyview" xml:space="preserve">
+    <value>2.Leave steamparental to empty if you don't open the Steam Family View.</value>
+  </data>
+  <data name="notice_usecookie" xml:space="preserve">
+    <value>1.Please use the cookie form "SteamCommunity.com" instead of "store.steampowered.com",or you can't login to SteamCommunity.</value>
+  </data>
 </root>

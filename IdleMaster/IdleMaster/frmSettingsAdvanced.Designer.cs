@@ -42,6 +42,12 @@ namespace IdleMaster
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.ttHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.txtSteamparental = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.noticeBox = new System.Windows.Forms.GroupBox();
+            this.NoticeUseCookie = new System.Windows.Forms.Label();
+            this.NoticeFamilyView = new System.Windows.Forms.Label();
+            this.noticeBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,7 +88,7 @@ namespace IdleMaster
             // 
             // txtsteamMachineAuth
             // 
-            this.txtsteamMachineAuth.Location = new System.Drawing.Point(116, 30);
+            this.txtsteamMachineAuth.Location = new System.Drawing.Point(116, 31);
             this.txtsteamMachineAuth.Name = "txtsteamMachineAuth";
             this.txtsteamMachineAuth.PasswordChar = '*';
             this.txtsteamMachineAuth.Size = new System.Drawing.Size(317, 21);
@@ -101,7 +107,7 @@ namespace IdleMaster
             // btnUpdate
             // 
             this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUpdate.Location = new System.Drawing.Point(358, 77);
+            this.btnUpdate.Location = new System.Drawing.Point(358, 214);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 21);
             this.btnUpdate.TabIndex = 7;
@@ -111,8 +117,9 @@ namespace IdleMaster
             // 
             // btnView
             // 
+            this.btnView.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnView.Image = global::IdleMaster.Properties.Resources.imgView;
-            this.btnView.Location = new System.Drawing.Point(116, 80);
+            this.btnView.Location = new System.Drawing.Point(116, 217);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(27, 21);
             this.btnView.TabIndex = 6;
@@ -128,12 +135,64 @@ namespace IdleMaster
             this.ttHelp.InitialDelay = 500;
             this.ttHelp.ReshowDelay = 100;
             // 
+            // txtSteamparental
+            // 
+            this.txtSteamparental.Location = new System.Drawing.Point(116, 75);
+            this.txtSteamparental.Name = "txtSteamparental";
+            this.txtSteamparental.PasswordChar = '*';
+            this.txtSteamparental.Size = new System.Drawing.Size(317, 21);
+            this.txtSteamparental.TabIndex = 9;
+            this.txtSteamparental.TextChanged += new System.EventHandler(this.txtSteamparental_TextChanged_1);
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(1, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 21);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "steamparental:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // noticeBox
+            // 
+            this.noticeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.noticeBox.Controls.Add(this.NoticeFamilyView);
+            this.noticeBox.Controls.Add(this.NoticeUseCookie);
+            this.noticeBox.Location = new System.Drawing.Point(12, 101);
+            this.noticeBox.Name = "noticeBox";
+            this.noticeBox.Size = new System.Drawing.Size(421, 107);
+            this.noticeBox.TabIndex = 10;
+            this.noticeBox.TabStop = false;
+            this.noticeBox.Text = "Notice:";
+            // 
+            // NoticeUseCookie
+            // 
+            this.NoticeUseCookie.Location = new System.Drawing.Point(7, 21);
+            this.NoticeUseCookie.Name = "NoticeUseCookie";
+            this.NoticeUseCookie.Size = new System.Drawing.Size(408, 36);
+            this.NoticeUseCookie.TabIndex = 0;
+            this.NoticeUseCookie.Text = "1.Please use the cookie form \"SteamCommunity.com\" instead of \"store.steampowered." +
+    "com\",or you can\'t login to SteamCommunity.";
+            // 
+            // NoticeFamilyView
+            // 
+            this.NoticeFamilyView.Location = new System.Drawing.Point(6, 60);
+            this.NoticeFamilyView.Name = "NoticeFamilyView";
+            this.NoticeFamilyView.Size = new System.Drawing.Size(408, 36);
+            this.NoticeFamilyView.TabIndex = 1;
+            this.NoticeFamilyView.Text = "2.Leave steamparental to empty if you don\'t open the Steam Family View.";
+            // 
             // frmSettingsAdvanced
             // 
             this.AcceptButton = this.btnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 107);
+            this.ClientSize = new System.Drawing.Size(446, 244);
+            this.Controls.Add(this.noticeBox);
+            this.Controls.Add(this.txtSteamparental);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.txtsteamLoginSecure);
@@ -149,6 +208,7 @@ namespace IdleMaster
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Idle Master Authentication Data";
             this.Load += new System.EventHandler(this.frmSettingsAdvanced_Load);
+            this.noticeBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +225,10 @@ namespace IdleMaster
         private Button btnView;
         private Button btnUpdate;
         private ToolTip ttHelp;
+        private TextBox txtSteamparental;
+        private Label label4;
+        private GroupBox noticeBox;
+        private Label NoticeFamilyView;
+        private Label NoticeUseCookie;
     }
 }

@@ -339,4 +339,13 @@
   <data name="idle_onethenmany" xml:space="preserve">
     <value>优先单独运行已满2小时的游戏，然后再同时挂卡</value>
   </data>
+  <data name="notice" xml:space="preserve">
+    <value>注意</value>
+  </data>
+  <data name="notice_familyview" xml:space="preserve">
+    <value>2.如果你没有开启Steam家庭监护，请把steamparental这一项设置为空</value>
+  </data>
+  <data name="notice_usecookie" xml:space="preserve">
+    <value>1.请使用"SteamCommunity.com"中的Cookie，“Store.steampowered.com”中的Cookie不能使你登陆社区</value>
+  </data>
 </root>
