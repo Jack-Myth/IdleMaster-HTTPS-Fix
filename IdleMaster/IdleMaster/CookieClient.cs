@@ -41,6 +41,7 @@ namespace IdleMaster
                         Settings.Default.steamLoginSecure = string.Empty;
                         Settings.Default.steamMachineAuth = string.Empty;
                         Settings.Default.steamRememberLogin = string.Empty;
+                        Settings.Default.steamparental = string.Empty;
                         Settings.Default.Save();
                     }
                 }
