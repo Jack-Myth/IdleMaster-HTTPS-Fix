@@ -41,6 +41,9 @@
             this.btnSelectAll = new System.Windows.Forms.Button();
             this.btnDeselectAll = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DelAllCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DelAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.btnReturn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -51,12 +54,9 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.DelAllCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DelAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // checkedListBox1
@@ -69,7 +69,7 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(12, 12);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(356, 196);
+            this.checkedListBox1.Size = new System.Drawing.Size(356, 260);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             this.checkedListBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkedListBox1_MouseUp);
@@ -107,7 +107,7 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 225);
+            this.label1.Location = new System.Drawing.Point(13, 289);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 1;
@@ -116,7 +116,7 @@
             // appidInput
             // 
             this.appidInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.appidInput.Location = new System.Drawing.Point(60, 222);
+            this.appidInput.Location = new System.Drawing.Point(60, 286);
             this.appidInput.Name = "appidInput";
             this.appidInput.Size = new System.Drawing.Size(87, 21);
             this.appidInput.TabIndex = 2;
@@ -124,7 +124,7 @@
             // btnAdd
             // 
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAdd.Location = new System.Drawing.Point(153, 220);
+            this.btnAdd.Location = new System.Drawing.Point(153, 284);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 23);
             this.btnAdd.TabIndex = 3;
@@ -135,7 +135,7 @@
             // btnSelectAll
             // 
             this.btnSelectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSelectAll.Location = new System.Drawing.Point(209, 220);
+            this.btnSelectAll.Location = new System.Drawing.Point(209, 284);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(43, 23);
             this.btnSelectAll.TabIndex = 4;
@@ -146,7 +146,7 @@
             // btnDeselectAll
             // 
             this.btnDeselectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeselectAll.Location = new System.Drawing.Point(258, 220);
+            this.btnDeselectAll.Location = new System.Drawing.Point(258, 284);
             this.btnDeselectAll.Name = "btnDeselectAll";
             this.btnDeselectAll.Size = new System.Drawing.Size(57, 23);
             this.btnDeselectAll.TabIndex = 5;
@@ -159,7 +159,7 @@
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.ContextMenuStrip = this.contextMenuStrip2;
             this.btnDel.Image = global::IdleMaster.Properties.Resources.imgTrash;
-            this.btnDel.Location = new System.Drawing.Point(374, 176);
+            this.btnDel.Location = new System.Drawing.Point(374, 240);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(40, 33);
             this.btnDel.TabIndex = 6;
@@ -167,10 +167,32 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DelAllCheckedToolStripMenuItem,
+            this.DelAllToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(137, 48);
+            // 
+            // DelAllCheckedToolStripMenuItem
+            // 
+            this.DelAllCheckedToolStripMenuItem.Name = "DelAllCheckedToolStripMenuItem";
+            this.DelAllCheckedToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.DelAllCheckedToolStripMenuItem.Text = "删除勾选项";
+            this.DelAllCheckedToolStripMenuItem.Click += new System.EventHandler(this.DelAllCheckedToolStripMenuItem_Click);
+            // 
+            // DelAllToolStripMenuItem
+            // 
+            this.DelAllToolStripMenuItem.Name = "DelAllToolStripMenuItem";
+            this.DelAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.DelAllToolStripMenuItem.Text = "删除所有";
+            this.DelAllToolStripMenuItem.Click += new System.EventHandler(this.DelAllToolStripMenuItem_Click);
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(321, 220);
+            this.button2.Location = new System.Drawing.Point(321, 284);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 23);
             this.button2.TabIndex = 7;
@@ -201,7 +223,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::IdleMaster.Properties.Resources.imgSpin;
-            this.pictureBox1.Location = new System.Drawing.Point(386, 137);
+            this.pictureBox1.Location = new System.Drawing.Point(386, 201);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(16, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -212,7 +234,7 @@
             // GameCount
             // 
             this.GameCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.GameCount.Location = new System.Drawing.Point(368, 162);
+            this.GameCount.Location = new System.Drawing.Point(368, 226);
             this.GameCount.Name = "GameCount";
             this.GameCount.Size = new System.Drawing.Size(54, 12);
             this.GameCount.TabIndex = 10;
@@ -249,33 +271,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DelAllCheckedToolStripMenuItem,
-            this.DelAllToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(137, 48);
-            // 
-            // DelAllCheckedToolStripMenuItem
-            // 
-            this.DelAllCheckedToolStripMenuItem.Name = "DelAllCheckedToolStripMenuItem";
-            this.DelAllCheckedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.DelAllCheckedToolStripMenuItem.Text = "删除勾选项";
-            this.DelAllCheckedToolStripMenuItem.Click += new System.EventHandler(this.DelAllCheckedToolStripMenuItem_Click);
-            // 
-            // DelAllToolStripMenuItem
-            // 
-            this.DelAllToolStripMenuItem.Name = "DelAllToolStripMenuItem";
-            this.DelAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.DelAllToolStripMenuItem.Text = "删除所有";
-            this.DelAllToolStripMenuItem.Click += new System.EventHandler(this.DelAllToolStripMenuItem_Click);
-            // 
             // AlwaysIdleList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 249);
+            this.ClientSize = new System.Drawing.Size(419, 313);
             this.Controls.Add(this.GameCount);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnImport);
@@ -300,8 +300,8 @@
             this.Resize += new System.EventHandler(this.AlwaysIdleList_Resize);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -316,7 +316,7 @@ namespace IdleMaster
             // 
             this.pauseIdlingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pauseIdlingToolStripMenuItem.Image")));
             this.pauseIdlingToolStripMenuItem.Name = "pauseIdlingToolStripMenuItem";
-            this.pauseIdlingToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.pauseIdlingToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.pauseIdlingToolStripMenuItem.Text = "&Pause Idling";
             this.pauseIdlingToolStripMenuItem.Click += new System.EventHandler(this.pauseIdlingToolStripMenuItem_Click);
             // 
@@ -325,7 +325,7 @@ namespace IdleMaster
             this.resumeIdlingToolStripMenuItem.Enabled = false;
             this.resumeIdlingToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("resumeIdlingToolStripMenuItem.Image")));
             this.resumeIdlingToolStripMenuItem.Name = "resumeIdlingToolStripMenuItem";
-            this.resumeIdlingToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.resumeIdlingToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.resumeIdlingToolStripMenuItem.Text = "Resume Idling";
             this.resumeIdlingToolStripMenuItem.Click += new System.EventHandler(this.resumeIdlingToolStripMenuItem_Click);
             // 
@@ -333,20 +333,20 @@ namespace IdleMaster
             // 
             this.skipGameToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("skipGameToolStripMenuItem.Image")));
             this.skipGameToolStripMenuItem.Name = "skipGameToolStripMenuItem";
-            this.skipGameToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.skipGameToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.skipGameToolStripMenuItem.Text = "&Skip Current Game";
             this.skipGameToolStripMenuItem.Click += new System.EventHandler(this.skipGameToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(205, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(209, 6);
             // 
             // blacklistCurrentGameToolStripMenuItem
             // 
             this.blacklistCurrentGameToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgBlacklist;
             this.blacklistCurrentGameToolStripMenuItem.Name = "blacklistCurrentGameToolStripMenuItem";
-            this.blacklistCurrentGameToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.blacklistCurrentGameToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.blacklistCurrentGameToolStripMenuItem.Text = "&Blacklist Current Game";
             this.blacklistCurrentGameToolStripMenuItem.Click += new System.EventHandler(this.blacklistCurrentGameToolStripMenuItem_Click);
             // 
@@ -367,7 +367,7 @@ namespace IdleMaster
             // 
             this.statisticsToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgStatistics;
             this.statisticsToolStripMenuItem.Name = "statisticsToolStripMenuItem";
-            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.statisticsToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.statisticsToolStripMenuItem.Text = "&Statistics";
             this.statisticsToolStripMenuItem.Click += new System.EventHandler(this.statisticsToolStripMenuItem_Click);
             // 
@@ -375,7 +375,7 @@ namespace IdleMaster
             // 
             this.changelogToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgDocument;
             this.changelogToolStripMenuItem.Name = "changelogToolStripMenuItem";
-            this.changelogToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.changelogToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.changelogToolStripMenuItem.Text = "&Release Notes";
             this.changelogToolStripMenuItem.Click += new System.EventHandler(this.changelogToolStripMenuItem_Click);
             // 
@@ -383,7 +383,7 @@ namespace IdleMaster
             // 
             this.officialGroupToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgGlobe;
             this.officialGroupToolStripMenuItem.Name = "officialGroupToolStripMenuItem";
-            this.officialGroupToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.officialGroupToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.officialGroupToolStripMenuItem.Text = "&Official Group";
             this.officialGroupToolStripMenuItem.Click += new System.EventHandler(this.officialGroupToolStripMenuItem_Click);
             // 
@@ -391,20 +391,20 @@ namespace IdleMaster
             // 
             this.toolStripMenuItem1.Image = global::IdleMaster.Properties.Resources.stcn;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
-            this.toolStripMenuItem1.Text = "问题反馈";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
+            this.toolStripMenuItem1.Text = "问题反馈和更新";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(157, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(185, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Image = global::IdleMaster.Properties.Resources.imgInfo;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(188, 26);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 

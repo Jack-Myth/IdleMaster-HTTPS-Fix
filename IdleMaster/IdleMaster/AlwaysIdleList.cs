@@ -140,7 +140,8 @@ namespace IdleMaster
             {
                 //Stop Idle
                 foreach (Process p in ProcessList)
-                    p.Kill();
+                    if(!p.HasExited)
+                        p.Kill();
                 ProcessList.Clear();
                 this.button2.Text = "▶开始";
                 this.checkedListBox1.Enabled = true;
