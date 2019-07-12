@@ -49,8 +49,13 @@ namespace IdleMaster
                 }
                 Settings.Default.language = cboLanguage.Text;
             }
-
-            if (radOneThenMany.Checked)
+            bool onethanmany = radOneThenMany.Checked;
+            Settings.Default.JBmode = radJBmode.Checked;
+            if (radJBmode.Checked)
+            {
+                onethanmany = false;
+            }
+            if (onethanmany)
             {
                 Settings.Default.OnlyOneGameIdle = false;
                 Settings.Default.OneThenMany = true;
