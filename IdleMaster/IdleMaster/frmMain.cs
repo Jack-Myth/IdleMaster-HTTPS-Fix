@@ -106,7 +106,7 @@ namespace IdleMaster
             }
         }
         //以下是魔改代码
-        public int MinRuntime = 2;
+        public int MinRuntime = 2999;
         public void UpdateIdleProcesses()
         {
             foreach (var badge in CanIdleBadges.Where(b => !Equals(b, CurrentBadge)))
@@ -250,7 +250,7 @@ namespace IdleMaster
                 {
                     IdleComplete();
                 }
-
+                
                 UpdateStateInfo();
             }
         }
@@ -1252,6 +1252,44 @@ namespace IdleMaster
             Program.Mode = 1;
             StopAutoNext();
             Close();
+        }
+
+        private void StartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateStateInfo();
+            StartIdle();
+        }
+
+        private void StopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopIdle();
+        }
+
+        private int autorestartcount = 0;
+        private bool autorestartwait = false;
+
+        private void AutoRestarter_Tick(object sender, EventArgs e)
+        {
+            labautorestart.Visible = Settings.Default.JBmode;
+            if (Settings.Default.JBmode)
+            {
+                int all = 14 * 60;
+                autorestartcount += 1;
+                if (autorestartwait == false && autorestartcount > all)
+                {
+                    StopToolStripMenuItem_Click(null, null);
+                    autorestartwait = true;
+                    autorestartcount = 0;
+                }
+                if (autorestartwait && autorestartcount > 10)
+                {
+                    autorestartwait = false;
+                    autorestartcount = 0;
+                    StartToolStripMenuItem_Click(null, null);
+                }
+                labautorestart.Text = $"粗暴模式-下次重启：{ all - autorestartcount}秒";
+            }
+            
         }
     }
 }
