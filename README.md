@@ -1,7 +1,7 @@
 # IdleMaster-HTTPS-Fix
 ## A HTTPS Fixed Version Of Idle Master  
-![](Preview/Preview.jpg)
-
+![](Preview/Preview.jpg)  
+  
 ## About Idle Master HTTPS Fix  
 This Project is the HTTPS Fixed version of IdleMaster, From [IdleMaster魔改版](https://github.com/wagayaluda/idle)(It is unusable now).  
 Idle Master HTTPS Fixed version has repaired many Bugs Since IdleMaster is deprecated. It should work fine till the last Update.
