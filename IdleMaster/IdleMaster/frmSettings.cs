@@ -40,7 +40,7 @@ namespace IdleMaster
             {
                 Settings.Default.sort = "mostvalue";
             }
-
+            
             if (cboLanguage.Text != "")
             {
                 if (cboLanguage.Text != Settings.Default.language)
@@ -49,8 +49,13 @@ namespace IdleMaster
                 }
                 Settings.Default.language = cboLanguage.Text;
             }
-
-            if (radOneThenMany.Checked)
+            bool onethanmany = radOneThenMany.Checked;
+            Settings.Default.JBmode = radJBmode.Checked;
+            if (radJBmode.Checked)
+            {
+                onethanmany = false;
+            }
+            if (onethanmany)
             {
                 Settings.Default.OnlyOneGameIdle = false;
                 Settings.Default.OneThenMany = true;
@@ -60,6 +65,7 @@ namespace IdleMaster
                 Settings.Default.OnlyOneGameIdle = radOneGameOnly.Checked && !radManyThenOne.Checked;
                 Settings.Default.OneThenMany = false;
             }
+            Settings.Default.JBmode = radJBmode.Checked;
             Settings.Default.minToTray = chkMinToTray.Checked;
             Settings.Default.ignoreclient = chkIgnoreClientStatus.Checked;
             Settings.Default.showUsername = chkShowUsername.Checked;
@@ -197,6 +203,10 @@ namespace IdleMaster
             Maxtimeout.SelectedIndex = Settings.Default.LoginTimeout;
             PageRedit.SelectedIndex = Settings.Default.LoginPageRedirect;
             textBox1.Text = Settings.Default.MaxIdleCount.ToString();
+            if (Settings.Default.JBmode)
+            {
+                radJBmode.Checked = true;
+            }
         }
 
         private void btnAdvanced_Click(object sender, EventArgs e)
@@ -254,5 +264,6 @@ namespace IdleMaster
             MessageBox.Show("此处可以设置同时挂卡的最大上限，Idle默认可以同时运行30个游戏，你可以修改这个参数，来限制IdleMaster的运行数量。" +
                 "但是，由于Steam本身的限制，无论运行多少游戏，最多只有30个游戏会记录时长，请自行斟酌","这是什么？");
         }
+
     }
 }

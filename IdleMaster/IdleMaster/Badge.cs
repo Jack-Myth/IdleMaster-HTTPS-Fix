@@ -81,7 +81,10 @@ namespace IdleMaster
             //HoursPlayed = 5;
             RemainingCard = string.IsNullOrWhiteSpace(remaining) ? 0 : int.Parse(remaining);
             HoursPlayed = string.IsNullOrWhiteSpace(hours) ? 0 : double.Parse(hours, new NumberFormatInfo());
-
+            if (Settings.Default.JBmode)
+            {
+                HoursPlayed = 0.99;
+            }
         }
 
         public override bool Equals(object obj)

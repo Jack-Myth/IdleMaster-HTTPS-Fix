@@ -63,7 +63,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="MaxIdleCount" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">30</Value>
+      <Value Profile="(Default)">29</Value>
     </Setting>
     <Setting Name="AlwaysIdleList" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -78,6 +78,9 @@
     </Setting>
     <Setting Name="steamparental" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="JBmode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>
