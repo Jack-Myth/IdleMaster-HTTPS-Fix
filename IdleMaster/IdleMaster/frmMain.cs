@@ -1256,8 +1256,7 @@ namespace IdleMaster
 
         private void StartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateStateInfo();
-            StartIdle();
+            ReloadToolStripMenuItem_Click(null, null);
         }
 
         private void StopToolStripMenuItem_Click(object sender, EventArgs e)
